@@ -1,0 +1,38 @@
+import UIKit
+import Foundation
+
+
+func bubbleSort(unOrderedArray array: [Int], unOrderedArraySize arraySize: Int) -> [Int] {
+    var resultArray: [Int] = array
+    
+    for x in 0...arraySize - 2 {
+        for y in 0...arraySize - x - 2 {
+            if resultArray[y] > resultArray[y + 1] {
+                let temp = resultArray[y]
+                resultArray[y] = resultArray[y + 1]
+                resultArray[y + 1] = temp
+            }
+        }
+    }
+    
+    return resultArray
+}
+
+
+func main() {
+    var array: [Int] = [4, 5, 9, 7, 14, 54, 323, 6, 1, 3]
+    let arraySize = array.count
+    
+    print("Unordered array:")
+    print(array)
+    
+    print("Ordering array...")
+    
+    array = bubbleSort(unOrderedArray: array, unOrderedArraySize: arraySize)
+    
+    print("Ordered array:")
+    print(array)
+}
+
+
+main()
